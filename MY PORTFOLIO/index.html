@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Amaan Khan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="/images/9878ee8b-597a-49de-8641-7ff460917a28-modified.png">
+</head>
+<body>
+    <div id="loading">
+        <div id="spinner"></div>
+    </div>
+    <div id="magnify">
+        <h1 onclick="closemagnify()"><i class="fas fa-times"></i></h1> 
+        <div id="img_here"></div>
+    </div>
+    <header id="header" class="animated slideInDown" style="animation-delay:1.8s;">
+        <table>
+            <tr> 
+                <td id="logo">CoderX</td>
+                <td id="navigation">  
+                    <a href="#bio">about</a>      
+                    <a href="#work">work</a>
+                    <a href="#skill">skills</a>
+                    <a href="#contact">contact</a>      
+                </td>
+            </tr>
+        </table>
+    </header>
+    <table id="top_part">
+        <tr>
+            <td id="about" class="animated slideInLeft" style="animation-delay:2s;">
+                <h1>Hey there, This is Amaan Khan.</h1> 
+            <a href="https://drive.google.com/file/d/1oNPa8eod27uWiDez-5KQ_8mEHyCsQk5q/view?usp=sharing" target="_blank" class="btn_one">Download CV</a> 
+                <table>
+                    <tr>
+                        <td>
+                            <a class="social" href="https://www.instagram.com/amaan.coderx/"><i class="fab fa-instagram"></i></a>
+                            <a class="social" href="https://github.com/amaancoderx"> <i class="fab fa-github"></i></a>   
+                            <a class="social"><i class="fab fa-discord"></i></a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td id="rightImage" class="animated jackInTheBox" style="animation-delay:2.2s;"></td>
+        </tr>
+    </table>
+    <div id="bio">
+        <h1>about</h1>
+        <p>
+            I am a certified web developer with a background in cyber security. I have recieved my certifications from John Hopkins university in the field of HTML, CSS and Javascript for web development. I have worked with various projects like building a spotify, flipkart clone, animations, etc. I also teach web development for beginners on my <a href="https://www.instagram.com/amaan.coderx" >instagram</a> and <a href="https://www.youtube.com/channel/UCkYgCdmaGsX5XUTP6WnY-IQ" >youtube</a>.
+        </p>
+        <p>
+            I am also experienced in graphic designing which includes designing a YouTube Thumbnail, advertising designs, brochures, logos, magazines, catalogues, posters, etc. are among my specialties. Through my skills of graphic design and social media management I have grew my instagram account from 0 to 700+ followers in less than six months. 
+        </p>
+    </div>
+
+    <div id="work">
+        <h1>Portfolio</h1>
+        <div id="photos">
+            <img onclick="magnify($(this).attr('src'))" src="images/portfolio1.jpg">
+            <img onclick="magnify($(this).attr('src'))" src="images/portfolio4.jpg">
+            <img onclick="magnify($(this).attr('src'))" src="images/portfolio9.png">
+            <img onclick="magnify($(this).attr('src'))" src="images/portfolio.PNG">
+            <img onclick="magnify($(this).attr('src'))" src="images/portfolio10.PNG">
+            <img onclick="magnify($(this).attr('src'))" src="images/portfolio-2.jpg">
+            <img onclick="magnify($(this).attr('src'))" src="images/portfolio5.jpg">
+            <img onclick="magnify($(this).attr('src'))" src="images/portfolio3_.jpg">
+            <img onclick="magnify($(this).attr('src'))" src="images/portfolio6.png">
+            <img onclick="magnify($(this).attr('src'))" src="images/portfolio8.png"> 
+            
+        </div>
+    </div>
+    <div id="skill">
+        <h2>My skill</h2>
+    </div>
+    <div class="skills">   
+
+        <div class="skill"> 
+            <div class="skill-name">HTML</div>
+            <div class="skill-bar">
+                <div class="skill-per" per="100"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-name">CSS</div>
+            <div class="skill-bar">
+                <div class="skill-per" per="95"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="skill-name">Javascript</div>
+            <div class="skill-bar">
+                <div class="skill-per" per="80"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-name">Bootstrap</div>
+            <div class="skill-bar">
+                <div class="skill-per" per="90"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="skill-name">Graphic Designer</div>
+            <div class="skill-bar">
+                <div class="skill-per" per="90"></div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <script>
+        $('.skill-per').each(function () {
+            var $this = $(this);
+            var per = $this.attr('per');
+            $this.css("width", per + '%');
+            $({ animatedValue: 0 }).animate({ animatedValue: per }, {
+                duration: 1000,
+                step: function () {
+                    $this.attr('per', Math.floor(this.animatedValue) + '%');
+
+                },
+                complete: function () {                
+                    $this.attr('per', Math.floor(this.animatedValue) + '%');
+
+                }
+
+            });
+        });
+    </script>
+    
+    <div id="contact">
+        <h1>contact</h1>
+            <table>
+                <tr>
+                    <td>
+                        <div id="inner_div">
+                            <table id="inner_table">
+                                <tr>
+                                    <td><i class="fas fa-at"></i> &nbsp; amaan.coderx@gmail.com</td>
+                                </tr>
+                                 <tr>
+                                    <td><i class="fab fa-instagram"></i> &nbsp; amaan.coderx</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fas fa-map-marker-alt"></i>
+                                    <div id="address">
+                                        India
+                                    </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a class="social" href="https://www.instagram.com/amaan.coderx/"><i class="fab fa-instagram"></i></a>
+                                        <a class="social" href="https://github.com/amaancoderx"> <i class="fab fa-github"></i></a>   
+                                        <a class="social"><i class="fab fa-discord"></i></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                    <td>
+                        <form action="https://formspree.io/f/xbjwdaak" method="post">
+        
+                            
+                            <label>
+                                <strong>Your email:</strong>
+                                <input type="email" name="_replyto">
+                              </label>
+                              <label>
+                               <strong>Your message:</strong> 
+                                <textarea name="message"></textarea>
+                              </label><br>
+                            <button class="btn_one" type="submit">send</button>
+                        </form> 
+                    </td>
+                </tr>
+            </table>
+    </div>
+    <div id="footer">
+        made on earth by a human <br> <a href="https://www.fiverr.com/amaankhan538?up_rollout=true">amaankhan538
+        </a>
+    </div>
+    <script src="index.js" type="text/javascript"></script>
+</body>
+</html>
