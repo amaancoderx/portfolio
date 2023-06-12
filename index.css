@@ -166,7 +166,7 @@ header table {
 #rightImage {
     width:100%;
     height:95vh;
-    background:url("charles-adrien-fournier-g815W4LH4F8-unsplash.jpg") center center;
+    background:url("./images/charles-adrien-fournier-g815W4LH4F8-unsplash.jpg") center center;
     background-size: cover;
     background-repeat:no-repeat;
 }
